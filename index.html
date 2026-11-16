@@ -295,11 +295,17 @@ footer{padding-block:0 40px;color:var(--muted);font-size:14px}
   .care .price{font-size:32px}
   .care h3{font-size:20px}
   .care p{color:var(--muted);font-size:15px}
+  .incl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 24px;margin-bottom:28px}
+  .incl b{font:600 12px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent);padding:8px 12px;border-radius:999px;white-space:nowrap}
+  .incl ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 24px;font-size:15px}
+  .incl li::before{content:"✓ ";color:var(--accent);font-weight:700}
+  @media (max-width:900px){.incl{grid-template-columns:1fr}}
   .fine{margin-top:16px;color:var(--muted);font-size:14px;max-width:80ch}
   @media (max-width:900px){.tiers{grid-template-columns:1fr;gap:28px}.care{grid-template-columns:1fr}}
   </style>
   <section class="block" id="tarifs">
     <h2>Tarifs</h2>
+    <div class="incl"><b>Inclus dans les 3 formules</b><ul><li>Référencement local : fiche Google Business créée ou optimisée</li><li>Google Search Console configurée</li><li>Prise en main jusqu'à ce que vous soyez autonome</li></ul></div>
     <div class="tiers">
       <div class="tier">
         <h3>Essentiel</h3>
@@ -313,14 +319,13 @@ footer{padding-block:0 40px;color:var(--muted);font-size:14px}
           <li>Horaires, adresse, plan</li>
           <li>Fiche Google reliée au site</li>
           <li>Mentions légales et bandeau cookies</li>
-          <li>1 h de prise en main</li>
         </ul>
         <!--EX-ESSENTIEL-->
       </div>
       <div class="tier pick">
         <h3>Pro <span class="flag">Recommandé</span></h3>
         <p class="for">Un vrai site à votre image, bien placé sur Google.</p>
-        <p class="price"><small>Forfait TTC</small>1 690 €</p>
+        <p class="price"><small>Forfait TTC</small>1 420 €</p>
         <ul>
           <li>Jusqu'à 6 pages</li>
           <li>Design sur mesure, maquette validée avec vous</li>
@@ -335,7 +340,7 @@ footer{padding-block:0 40px;color:var(--muted);font-size:14px}
       <div class="tier">
         <h3>Commerce</h3>
         <p class="for">Vendre ou réserver directement sur votre site.</p>
-        <p class="price"><small>À partir de, TTC</small>2 900 €</p>
+        <p class="price"><small>À partir de, TTC</small>2 400 €</p>
         <ul>
           <li>Tout le niveau Pro</li>
           <li><strong>Référencement naturel</strong> de vos plats, produits ou prestations</li>
