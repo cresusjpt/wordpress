@@ -16,14 +16,14 @@
 <meta name="description" content="Sites WordPress conçus et mis en ligne par Jean-Paul Tossou : immobilier, conciergerie, location meublée, boutique en ligne.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <style>
 /* Layout: planche de projets. Chaque site = fenêtre de navigateur avec sa vraie URL + téléphone en surimpression, fiche à côté. */
 :root{
   --paper:#f2f3f0; --surface:#ffffff; --ink:#15171c; --muted:#5b6170; --line:#d9dcd6;
   --accent:#2448d8; --accent-ink:#ffffff; --chrome:#e6e8e3;
   --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
-  --body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Schibsted Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
@@ -57,7 +57,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .btn:hover{transform:translateY(-1px)}
 
 /* Projets */
-.projects{display:grid;gap:96px;padding-block:48px 24px;border-top:1px solid var(--line)}
+.projects{display:grid;gap:96px;padding-top:48px;padding-bottom:24px;border-top:1px solid var(--line)}
 .project{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:48px;align-items:center}
 .project:nth-child(even) .shots{order:2}
 .shots{position:relative;padding:0 40px 40px 0}
@@ -95,7 +95,7 @@ section.block>h2{font-size:clamp(28px,4vw,44px);max-width:20ch;margin-bottom:32p
 .fits span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-size:14px}
 
 /* Contact */
-.contact{margin-block:88px 64px;background:var(--ink);color:var(--paper);border-radius:16px;padding:clamp(28px,5vw,56px);display:grid;gap:20px}
+.contact{margin-block:88px 64px;background:var(--ink);color:var(--paper);border-radius:16px;padding:48px;display:grid;gap:20px}
 .contact h2{font-size:clamp(30px,4.5vw,52px);max-width:18ch}
 .contact p{color:color-mix(in srgb,var(--paper) 75%,transparent);max-width:56ch}
 .mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
@@ -109,6 +109,7 @@ footer{padding-block:0 40px;color:var(--muted);font-size:14px}
   .shots{padding:0 24px 32px 0}
   .phone{width:30%;border-width:4px;border-radius:16px}
   header{padding-block:32px 28px}
+  .contact{padding:28px 24px}
 }
 @media (prefers-reduced-motion:no-preference){.btn,.browser{transition:transform .2s}.shots:hover .browser{transform:translateY(-3px)}}
 </style>
