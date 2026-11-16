@@ -227,34 +227,79 @@ footer{padding-block:0 40px;color:var(--muted);font-size:14px}
     </div>
   </section>
 
-  <section class="block">
-    <h2>Ce que je propose</h2>
-    <div class="two">
-      <div class="box">
-        <h3>Inclus dans le site vitrine</h3>
+  <style>
+  .tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+  .tier{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:28px 24px;display:grid;gap:16px;align-content:start;position:relative}
+  .tier.pick{border:2px solid var(--accent)}
+  .tier .flag{display:inline-block;vertical-align:middle;margin-left:8px;background:var(--accent);color:var(--accent-ink);font:600 12px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;padding:7px 10px;border-radius:999px}
+  .tier h3{font-size:24px}
+  .tier .for{color:var(--muted);font-size:15px;margin-top:-8px}
+  .price{font:700 clamp(34px,4vw,44px)/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .price small{font:500 14px var(--body);color:var(--muted);letter-spacing:0;display:block;margin-bottom:6px}
+  .tier ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:15px}
+  .tier li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+  .tier li::before{content:"";width:10px;height:6px;margin-top:7px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);rotate:-45deg}
+  .tier .ex{font:400 12px/1.4 var(--mono);color:var(--accent)}
+  .care{margin-top:20px;border:1px dashed var(--line);border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 28px;align-items:center}
+  .care .price{font-size:32px}
+  .care h3{font-size:20px}
+  .care p{color:var(--muted);font-size:15px}
+  .fine{margin-top:16px;color:var(--muted);font-size:14px;max-width:80ch}
+  @media (max-width:900px){.tiers{grid-template-columns:1fr;gap:28px}.care{grid-template-columns:1fr}}
+  </style>
+  <section class="block" id="tarifs">
+    <h2>Tarifs</h2>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Essentiel</h3>
+        <p class="for">Être trouvé et joignable, vite.</p>
+        <p class="price"><small>Forfait</small>890 €</p>
         <ul>
-          <li>Page d'accueil avec photo, slogan et bouton Commander</li>
-          <li>Carte complète par catégories, modifiable par vous</li>
-          <li>Liens Uber Eats, Deliveroo, téléphone et à emporter</li>
-          <li>Avis Google, galerie photos, lien Instagram</li>
-          <li>Horaires, adresse, itinéraire, bouton d'appel sur mobile</li>
-          <li>Référencement local : Google, fiche établissement, carte lisible par les moteurs</li>
-          <li>Nom de domaine, hébergement, HTTPS, mentions légales et bandeau cookies</li>
-          <li>Prise en main : je vous montre comment modifier votre contenu</li>
+          <li>1 à 3 pages</li>
+          <li>Votre carte ou vos services</li>
+          <li>Liens de commande et de contact</li>
+          <li>Horaires, adresse, plan</li>
+          <li>Fiche Google reliée au site</li>
+          <li>Mentions légales et bandeau cookies</li>
+          <li>1 h de prise en main</li>
         </ul>
+        <span class="ex">Comme les maquettes A et D, en plus simple</span>
       </div>
-      <div class="box opt">
-        <h3>En option</h3>
+      <div class="tier pick">
+        <h3>Pro <span class="flag">Recommandé</span></h3>
+        <p class="for">Un vrai site à votre image, bien placé sur Google.</p>
+        <p class="price"><small>Forfait</small>1 690 €</p>
         <ul>
-          <li>Commande en ligne directe sur votre site, sans commission de plateforme, paiement par carte (maquette B)</li>
-          <li>Réservation de table en ligne (maquette C)</li>
-          <li>Version anglaise</li>
-          <li>Adresse e-mail professionnelle à votre nom de domaine</li>
+          <li>Jusqu'à 6 pages</li>
+          <li>Design sur mesure, maquette validée avec vous</li>
+          <li>Référencement local complet</li>
+          <li>Avis Google affichés automatiquement</li>
+          <li>Galerie Instagram</li>
+          <li>QR code de votre carte ou de votre site</li>
+          <li>2 séries de retouches</li>
         </ul>
-        <p class="ref">Tarif et délai précis après un premier échange, selon ce que vous retenez.</p>
+        <span class="ex">Maquettes A et D</span>
+      </div>
+      <div class="tier">
+        <h3>Commerce</h3>
+        <p class="for">Vendre ou réserver directement sur votre site.</p>
+        <p class="price"><small>À partir de</small>2 900 €</p>
+        <ul>
+          <li>Tout le niveau Pro</li>
+          <li>Au choix : commande en ligne avec paiement, réservation de table ou boutique</li>
+          <li>Notifications à chaque commande ou réservation</li>
+          <li>Sans commission de plateforme</li>
+        </ul>
+        <span class="ex">Maquette B (commande) ou C (réservation)</span>
       </div>
     </div>
+    <div class="care">
+      <p class="price">49 €<small style="display:inline;margin-left:6px">/ mois</small></p>
+      <div><h3>Maintenance</h3><p>Hébergement, nom de domaine, mises à jour, sauvegardes et 30 minutes de modifications par mois. Vous n'avez rien à gérer.</p></div>
+    </div>
+    <p class="fine">Les extensions payantes éventuelles (paiement, réservation) sont facturées au prix de l'éditeur. Devis précis après un premier échange.</p>
   </section>
+
 
   <section class="block">
     <h2>Pour démarrer vite, préparez</h2>
