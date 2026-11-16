@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Trois maquettes de site pour restaurant : commande, carte modifiable, réservation de table. Sur WordPress, à votre nom.">
+<meta name="description" content="Quatre maquettes de site pour restaurant : commande, avis Google, carte modifiable, réservation de table. Sur WordPress, à votre nom.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Un site pour votre restaurant : trois maquettes">
-<meta property="og:description" content="Trois maquettes de site pour restaurant : commande, carte modifiable, réservation de table. Sur WordPress, à votre nom.">
+<meta property="og:title" content="Un site pour votre restaurant : quatre maquettes">
+<meta property="og:description" content="Quatre maquettes de site pour restaurant : commande, avis Google, carte modifiable, réservation de table. Sur WordPress, à votre nom.">
 <meta property="og:url" content="https://www.jeanpaultossou.tech/wordpress/restaurant/">
-<meta property="og:image" content="https://www.jeanpaultossou.tech/wordpress/shots/fafa.jpg">
+<meta property="og:image" content="https://www.jeanpaultossou.tech/wordpress/restaurant/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Proposition site restaurant</title>
@@ -145,7 +145,8 @@ footer{padding-block:0 40px;color:var(--muted);font-size:14px}
 .check li::before{content:"";width:14px;height:14px;margin-top:5px;border:1.5px solid var(--ink);border-radius:3px}
 .ref{color:var(--muted);font-size:15px}
 .ref a{color:var(--accent)}
-.maq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.maq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px}
+.note-ex{margin:0 0 36px;max-width:68ch;border-left:3px solid var(--accent);padding:4px 0 4px 16px;color:var(--ink);font-size:16px}
 .maq a{text-decoration:none;display:grid;gap:14px;align-content:start}
 .maq .frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:0 24px 48px -28px rgb(0 0 0 / .35);position:relative}
 .maq .frame img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
@@ -172,7 +173,7 @@ footer{padding-block:0 40px;color:var(--muted);font-size:14px}
     <h1>Votre restaurant, avec un site qui <em>donne faim</em>.</h1>
     <p class="lede">Vous avez montré le site de <strong>Pezzo di Pizza</strong> en exemple. Voici ce qui le rend efficace, et comment je le construirais pour vous sur <strong>WordPress</strong>, avec votre carte, vos photos et vos liens de commande. Vous restez libre de tout modifier vous-même.</p>
     <div class="cta-row">
-      <a class="btn primary" href="#maquettes">Voir les trois maquettes</a>
+      <a class="btn primary" href="#maquettes">Voir les quatre maquettes</a>
       <a class="btn" href="https://www.jeanpaultossou.tech/wordpress/" target="_blank" rel="noopener">Voir mes sites en ligne ↗</a>
     </div>
     <p class="ref">Exemple étudié : <a href="https://www.pezzodipizza.fr/" target="_blank" rel="noopener">pezzodipizza.fr</a>. On s'en inspire pour la structure, le design sera le vôtre.</p>
@@ -180,9 +181,11 @@ footer{padding-block:0 40px;color:var(--muted);font-size:14px}
 
   <main>
   <section class="block" id="maquettes" style="padding-top:24px">
-    <h2>Trois maquettes, trois façons de vendre</h2>
-    <p class="lede" style="margin:-16px 0 32px">Trois restaurants imaginaires pour montrer ce qui est possible. Chaque maquette s'ouvre et se teste, sur ordinateur comme sur téléphone. Pour vous, le design partira de votre logo et de vos photos.</p>
+    <h2>Quatre maquettes, quatre façons de vendre</h2>
+    <p class="lede" style="margin:-16px 0 16px">Quatre restaurants imaginaires pour montrer ce qui est possible. Chaque maquette s'ouvre et se teste, sur ordinateur comme sur téléphone.</p>
+    <p class="note-ex">Ce sont des exemples réalisés rapidement, avec des photos d'illustration. Votre site sera construit à partir de votre logo, de vos vraies photos et de votre carte, avec un travail de finition bien plus poussé.</p>
     <div class="maq">
+      <a href="maquette-d/" target="_blank" rel="noopener"><div class="frame"><img src="img/shot-d.jpg" alt="Maquette D, Pepe, page d'accueil" width="1440" height="900"><div class="ph"><img src="img/shot-d-m.jpg" alt=""></div></div><span class="how">Livraison maison, plateformes, avis Google</span><h3>D · Pepe ↗</h3><p>Pizzeria de quartier, la plus proche de votre exemple. Avis Google avec note et derniers commentaires, carte à onglets, galerie Instagram, petites animations.</p></a>
       <a href="maquette-a/" target="_blank" rel="noopener"><div class="frame"><img src="img/shot-a.jpg" alt="Maquette A, Forno Brace, page d'accueil" width="1440" height="900"><div class="ph"><img src="img/shot-a-m.jpg" alt=""></div></div><span class="how">Commande via Uber Eats, Deliveroo, téléphone</span><h3>A · Forno Brace ↗</h3><p>Pizzeria napolitaine au feu de bois. Ambiance sombre et chaleureuse, carte mise en avant, bouton d'appel fixe sur mobile. Le fonctionnement le plus proche de votre exemple.</p></a>
       <a href="maquette-b/" target="_blank" rel="noopener"><div class="frame"><img src="img/shot-b.jpg" alt="Maquette B, Pala Pala, page d'accueil" width="1440" height="900"><div class="ph"><img src="img/shot-b-m.jpg" alt=""></div></div><span class="how">Commande et paiement directs sur le site</span><h3>B · Pala Pala ↗</h3><p>Pizza à la part, style comptoir urbain. Panier, créneau de retrait, paiement par carte : la commande arrive chez vous, sans commission de plateforme.</p></a>
       <a href="maquette-c/" target="_blank" rel="noopener"><div class="frame"><img src="img/shot-c.jpg" alt="Maquette C, Da Lucia, page d'accueil" width="1440" height="900"><div class="ph"><img src="img/shot-c-m.jpg" alt=""></div></div><span class="how">Réservation de table en ligne</span><h3>C · Da Lucia ↗</h3><p>Trattoria familiale avec terrasse. Ambiance claire, carte du moment, réservation en trente secondes avec choix du placement.</p></a>
