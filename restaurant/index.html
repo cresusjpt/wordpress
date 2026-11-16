@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Trois maquettes de site pour restaurant : commande, carte modifiable, réservation de table. Sur WordPress, à votre nom.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Un site pour votre restaurant : trois maquettes">
+<meta property="og:description" content="Trois maquettes de site pour restaurant : commande, carte modifiable, réservation de table. Sur WordPress, à votre nom.">
+<meta property="og:url" content="https://www.jeanpaultossou.tech/wordpress/restaurant/">
+<meta property="og:image" content="https://www.jeanpaultossou.tech/wordpress/shots/fafa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Proposition site restaurant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Schibsted+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: planche de projets. Chaque site = fenêtre de navigateur avec sa vraie URL + téléphone en surimpression, fiche à côté. */
+:root{
+  --paper:#f2f3f0; --surface:#ffffff; --ink:#15171c; --muted:#5b6170; --line:#d9dcd6;
+  --accent:#2448d8; --accent-ink:#ffffff; --chrome:#e6e8e3;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Schibsted Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#111318; --surface:#1a1d24; --ink:#eceee9; --muted:#9aa1ae; --line:#2b2f38;
+  --accent:#7d97ff; --accent-ink:#0d1020; --chrome:#242832; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --surface:#1a1d24; --ink:#eceee9; --muted:#9aa1ae; --line:#2b2f38;
+  --accent:#7d97ff; --accent-ink:#0d1020; --chrome:#242832; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+p{margin:0}
+.label{font:500 12px/1.2 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* En-tête */
+header{padding-block:56px 40px;display:grid;gap:24px}
+.who{display:flex;align-items:center;gap:12px;font-weight:600}
+.who .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(40px,7vw,80px);max-width:14ch}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:60ch}
+.lede strong{color:var(--ink);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px)}
+
+/* Projets */
+.projects{display:grid;gap:96px;padding-top:48px;padding-bottom:24px;border-top:1px solid var(--line)}
+.project{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:48px;align-items:center}
+.project:nth-child(even) .shots{order:2}
+.shots{position:relative;padding:0 40px 40px 0}
+.browser{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 30px 60px -30px rgb(0 0 0 / .35)}
+.bar{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--chrome);border-bottom:1px solid var(--line)}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
+.url{flex:1;min-width:0;font:400 12px/1 var(--mono);color:var(--muted);background:var(--surface);border-radius:6px;padding:8px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.browser img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.phone{position:absolute;right:0;bottom:0;width:26%;max-width:150px;border:6px solid #15171c;border-radius:22px;overflow:hidden;background:#15171c;box-shadow:0 20px 40px -16px rgb(0 0 0 / .5)}
+.phone img{display:block;width:100%;aspect-ratio:9/19;object-fit:cover;object-position:top}
+
+.info{display:grid;gap:18px;min-width:0}
+.info h2{font-size:clamp(28px,3.4vw,40px)}
+.where{color:var(--muted)}
+.info ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.info li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.info li::before{content:"";width:8px;height:8px;margin-top:9px;border-radius:2px;background:var(--accent)}
+.stack{font:400 12px/1.5 var(--mono);color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.visit{font-weight:600;color:var(--accent);text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.visit:hover{text-decoration:underline}
+
+/* Offre */
+section.block{padding-block:72px 0}
+section.block>h2{font-size:clamp(28px,4vw,44px);max-width:20ch;margin-bottom:32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cell{background:var(--surface);padding:24px;display:grid;gap:8px;align-content:start}
+.cell h3{font-size:20px}
+.cell p{color:var(--muted)}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;gap:6px;padding-top:16px;border-top:2px solid var(--ink)}
+.steps li::before{content:"Étape " counter(s);font:500 12px/1 var(--mono);color:var(--accent);letter-spacing:.06em}
+.steps strong{font-family:var(--display);font-size:20px}
+.steps span{color:var(--muted)}
+.fits{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.fits span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-size:14px}
+
+/* Contact */
+.contact{margin-block:88px 64px;background:var(--ink);color:var(--paper);border-radius:16px;padding:48px;display:grid;gap:20px}
+.contact h2{font-size:clamp(30px,4.5vw,52px);max-width:18ch}
+.contact p{color:color-mix(in srgb,var(--paper) 75%,transparent);max-width:56ch}
+.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mail code{font:400 clamp(15px,2.2vw,20px)/1.3 var(--mono);user-select:all;word-break:break-all;background:color-mix(in srgb,var(--paper) 10%,transparent);padding:10px 14px;border-radius:8px}
+.mail button{font:600 15px var(--body);padding:11px 18px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+footer{padding-block:0 40px;color:var(--muted);font-size:14px}
+
+@media (max-width:820px){
+  .project{grid-template-columns:1fr;gap:28px}
+  .project:nth-child(even) .shots{order:0}
+  .shots{padding:0 24px 32px 0}
+  .phone{width:30%;border-width:4px;border-radius:16px}
+  header{padding-block:32px 28px}
+  .contact{padding:28px 24px}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.browser{transition:transform .2s}.shots:hover .browser{transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+<style>
+/* Proposition restaurant : même système que le portfolio. Lecture en tableau « dans l'exemple / chez vous », carte de menu en démonstration. */
+.rows{display:grid;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--line);gap:1px}
+.row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:24px;background:var(--surface);padding:20px 24px}
+.row h3{font-size:19px}
+.row .ex{color:var(--muted);font-size:15px;margin-top:4px}
+.row .you{display:grid;gap:4px}
+.row .edit{font:400 12px/1.4 var(--mono);color:var(--accent)}
+.rowhead{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:24px;padding:0 24px 10px}
+.carte{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px;display:grid;gap:18px;max-width:560px}
+.carte .tabs{display:flex;flex-wrap:wrap;gap:8px}
+.carte .tabs span{border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px}
+.carte .tabs span.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.dish{display:grid;grid-template-columns:1fr auto;gap:4px 16px}
+.dish+.dish{border-top:1px dashed var(--line);padding-top:16px}
+.dish b{font-family:var(--display);font-size:18px;font-weight:700;letter-spacing:.01em}
+.dish .px{font:500 16px var(--mono);font-variant-numeric:tabular-nums}
+.dish p{grid-column:1/-1;color:var(--muted);font-size:15px}
+.demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+.demo .note{display:grid;gap:14px;color:var(--muted)}
+.demo .note strong{color:var(--ink)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.box{border:1px solid var(--line);border-radius:12px;padding:24px;display:grid;gap:14px;align-content:start;background:var(--surface)}
+.box h3{font-size:22px}
+.box ul,.check{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.box li,.check li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.box li::before{content:"";width:8px;height:8px;margin-top:9px;border-radius:2px;background:var(--accent)}
+.box.opt li::before{background:transparent;border:1.5px solid var(--accent)}
+.check{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 32px}
+.check li::before{content:"";width:14px;height:14px;margin-top:5px;border:1.5px solid var(--ink);border-radius:3px}
+.ref{color:var(--muted);font-size:15px}
+.ref a{color:var(--accent)}
+.maq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.maq a{text-decoration:none;display:grid;gap:14px;align-content:start}
+.maq .frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:0 24px 48px -28px rgb(0 0 0 / .35);position:relative}
+.maq .frame img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.maq .frame .ph{position:absolute;right:10px;bottom:10px;width:26%;border:4px solid #15171c;border-radius:12px;overflow:hidden}
+.maq .frame .ph img{aspect-ratio:9/19}
+.maq h3{font-size:24px}
+.maq p{color:var(--muted);font-size:15px}
+.maq .how{font:500 12px/1.3 var(--mono);color:var(--accent)}
+.maq a:hover h3{text-decoration:underline}
+.alt{color:color-mix(in srgb,var(--paper) 75%,transparent);font-size:15px}
+.contact .btn.cal{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+@media (max-width:820px){
+  .row,.rowhead{grid-template-columns:1fr;gap:10px}
+  .rowhead{display:none}
+  .maq{grid-template-columns:1fr;gap:40px}
+  .demo{grid-template-columns:1fr}
+  .carte{padding:20px}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="who"><span class="dot" aria-hidden="true"></span>Proposition · Jean-Paul Tossou</div>
+    <h1>Votre restaurant, avec un site qui <em>donne faim</em>.</h1>
+    <p class="lede">Vous avez montré le site de <strong>Pezzo di Pizza</strong> en exemple. Voici ce qui le rend efficace, et comment je le construirais pour vous sur <strong>WordPress</strong>, avec votre carte, vos photos et vos liens de commande. Vous restez libre de tout modifier vous-même.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#maquettes">Voir les trois maquettes</a>
+      <a class="btn" href="https://www.jeanpaultossou.tech/wordpress/" target="_blank" rel="noopener">Voir mes sites en ligne ↗</a>
+    </div>
+    <p class="ref">Exemple étudié : <a href="https://www.pezzodipizza.fr/" target="_blank" rel="noopener">pezzodipizza.fr</a>. On s'en inspire pour la structure, le design sera le vôtre.</p>
+  </header>
+
+  <main>
+  <section class="block" id="maquettes" style="padding-top:24px">
+    <h2>Trois maquettes, trois façons de vendre</h2>
+    <p class="lede" style="margin:-16px 0 32px">Trois restaurants imaginaires pour montrer ce qui est possible. Chaque maquette s'ouvre et se teste, sur ordinateur comme sur téléphone. Pour vous, le design partira de votre logo et de vos photos.</p>
+    <div class="maq">
+      <a href="maquette-a/" target="_blank" rel="noopener"><div class="frame"><img src="img/shot-a.jpg" alt="Maquette A, Forno Brace, page d'accueil" width="1440" height="900"><div class="ph"><img src="img/shot-a-m.jpg" alt=""></div></div><span class="how">Commande via Uber Eats, Deliveroo, téléphone</span><h3>A · Forno Brace ↗</h3><p>Pizzeria napolitaine au feu de bois. Ambiance sombre et chaleureuse, carte mise en avant, bouton d'appel fixe sur mobile. Le fonctionnement le plus proche de votre exemple.</p></a>
+      <a href="maquette-b/" target="_blank" rel="noopener"><div class="frame"><img src="img/shot-b.jpg" alt="Maquette B, Pala Pala, page d'accueil" width="1440" height="900"><div class="ph"><img src="img/shot-b-m.jpg" alt=""></div></div><span class="how">Commande et paiement directs sur le site</span><h3>B · Pala Pala ↗</h3><p>Pizza à la part, style comptoir urbain. Panier, créneau de retrait, paiement par carte : la commande arrive chez vous, sans commission de plateforme.</p></a>
+      <a href="maquette-c/" target="_blank" rel="noopener"><div class="frame"><img src="img/shot-c.jpg" alt="Maquette C, Da Lucia, page d'accueil" width="1440" height="900"><div class="ph"><img src="img/shot-c-m.jpg" alt=""></div></div><span class="how">Réservation de table en ligne</span><h3>C · Da Lucia ↗</h3><p>Trattoria familiale avec terrasse. Ambiance claire, carte du moment, réservation en trente secondes avec choix du placement.</p></a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Ce qui marche dans l'exemple</h2>
+    <div class="rowhead label" aria-hidden="true"><span>Dans l'exemple</span><span>Chez vous</span></div>
+    <div class="rows">
+      <div class="row"><div><h3>Commander en un geste</h3><p class="ex">« Commander en ligne » visible dès l'arrivée, puis Uber Eats, Deliveroo et téléphone.</p></div>
+        <div class="you"><p>Bouton Commander en haut de chaque page, vers vos plateformes ou votre téléphone. Sur mobile, un bouton d'appel reste toujours à portée de pouce.</p><span class="edit">Liens modifiables par vous</span></div></div>
+      <div class="row"><div><h3>Une carte lisible avec les prix</h3><p class="ex">Menu par catégories : traditionnelles, gourmet, desserts.</p></div>
+        <div class="you"><p>Votre carte par catégories, avec ingrédients et prix. Lisible par Google, donc vos plats peuvent ressortir dans les recherches.</p><span class="edit">Prix et plats modifiables par vous</span></div></div>
+      <div class="row"><div><h3>Les avis Google comme preuve</h3><p class="ex">Note 5,0 et avis clients affichés sur la page.</p></div>
+        <div class="you"><p>Vos avis Google affichés automatiquement, mis à jour sans intervention.</p><span class="edit">Automatique</span></div></div>
+      <div class="row"><div><h3>Une identité forte</h3><p class="ex">Logo, slogan, bandeau défilant, photos de produits.</p></div>
+        <div class="you"><p>Un design construit à partir de votre logo, de vos couleurs et de vos meilleures photos. Pas un modèle générique.</p><span class="edit">Fait ensemble à l'étape maquette</span></div></div>
+      <div class="row"><div><h3>Infos pratiques partout</h3><p class="ex">Horaires, téléphone et adresse en haut et en bas de page, lien itinéraire.</p></div>
+        <div class="you"><p>Horaires, adresse, itinéraire et réseaux sociaux toujours visibles. Fiche Google Business reliée au site.</p><span class="edit">Horaires modifiables par vous</span></div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Votre carte, modifiable en deux minutes</h2>
+    <div class="demo">
+      <div class="carte" aria-label="Exemple de carte telle qu'elle apparaîtrait sur votre site">
+        <span class="label">Exemple de rendu</span>
+        <div class="tabs"><span class="on">Pizzas</span><span>Entrées</span><span>Desserts</span><span>Boissons</span></div>
+        <div class="dish"><b>Margherita</b><span class="px">11,00 €</span><p>Sauce tomate maison, mozzarella, basilic frais, huile d'olive.</p></div>
+        <div class="dish"><b>Reine</b><span class="px">12,50 €</span><p>Sauce tomate, jambon, champignons frais, mozzarella.</p></div>
+        <div class="dish"><b>Quatre fromages</b><span class="px">13,00 €</span><p>Mozzarella, gorgonzola, chèvre, parmesan.</p></div>
+      </div>
+      <div class="note">
+        <p><strong>Un prix change ? Un plat du jour ?</strong> Vous ouvrez l'administration depuis votre téléphone, vous modifiez la ligne, c'est en ligne.</p>
+        <p><strong>Pas de mise en page à refaire.</strong> Vous remplissez nom, description et prix. Le site s'occupe de l'affichage, sur ordinateur comme sur mobile.</p>
+        <p><strong>Le site vous appartient.</strong> Il est hébergé à votre nom, sur votre nom de domaine. Pas d'abonnement à une plateforme de création.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Ce que je propose</h2>
+    <div class="two">
+      <div class="box">
+        <h3>Inclus dans le site vitrine</h3>
+        <ul>
+          <li>Page d'accueil avec photo, slogan et bouton Commander</li>
+          <li>Carte complète par catégories, modifiable par vous</li>
+          <li>Liens Uber Eats, Deliveroo, téléphone et à emporter</li>
+          <li>Avis Google, galerie photos, lien Instagram</li>
+          <li>Horaires, adresse, itinéraire, bouton d'appel sur mobile</li>
+          <li>Référencement local : Google, fiche établissement, carte lisible par les moteurs</li>
+          <li>Nom de domaine, hébergement, HTTPS, mentions légales et bandeau cookies</li>
+          <li>Prise en main : je vous montre comment modifier votre contenu</li>
+        </ul>
+      </div>
+      <div class="box opt">
+        <h3>En option</h3>
+        <ul>
+          <li>Commande en ligne directe sur votre site, sans commission de plateforme, paiement par carte (maquette B)</li>
+          <li>Réservation de table en ligne (maquette C)</li>
+          <li>Version anglaise</li>
+          <li>Adresse e-mail professionnelle à votre nom de domaine</li>
+        </ul>
+        <p class="ref">Tarif et délai précis après un premier échange, selon ce que vous retenez.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Pour démarrer vite, préparez</h2>
+    <ul class="check">
+      <li>Votre logo, en bonne qualité si possible</li>
+      <li>10 à 20 photos : plats, salle, équipe, devanture</li>
+      <li>Votre carte actuelle avec les prix (une photo suffit)</li>
+      <li>Horaires, adresse et téléphone</li>
+      <li>Vos liens Uber Eats, Deliveroo, Instagram, fiche Google</li>
+      <li>Le nom de domaine souhaité, ou celui que vous avez déjà</li>
+    </ul>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>On en parle&nbsp;?</h2>
+    <p>Choisissez un créneau dans mon agenda : on regarde ensemble la maquette qui vous plaît et ce qu'il faut adapter. Je reviens ensuite avec votre page d'accueil et un devis clair.</p>
+    <div class="cta-row"><a class="btn cal" href="https://calendar.app.google/QawnsYM3SmpEyhUe9" target="_blank" rel="noopener">Prendre rendez-vous</a></div>
+    <p class="alt">Par e-mail, ou via la personne qui vous a transmis ce lien :</p>
+    <div class="mail">
+      <code id="mail">jeanpaul.tossou@saltech.fr</code>
+      <button type="button" id="copy">Copier l'adresse</button>
+    </div>
+  </section>
+  </main>
+
+  <footer>Jean-Paul Tossou · Saltech · proposition de novembre 2026</footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', e => {
+  const b = e.currentTarget, t = document.getElementById('mail').textContent;
+  const done = () => { b.textContent = 'Adresse copiée'; setTimeout(() => b.textContent = "Copier l'adresse", 2000); };
+  const pick = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('mail')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Sélectionnée, faites Copier'; };
+  try { navigator.clipboard.writeText(t).then(done, pick); } catch { pick(); }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pala Pala · maquette</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&display=swap">
+<style>
+/* Maquette B : pizza à la part, comptoir urbain. Jaune signal, noir, rouge tomate. Commande directe en ligne, retrait au comptoir. */
+:root{--yellow:#ffd23a;--ink:#111111;--tomato:#c42a15;--paper:#ffffff;--grey:#5f5a4c;--line:#1111111f;
+  --display:"Anton",Impact,"Arial Narrow",sans-serif;--body:"Archivo",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.in{max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:2px}
+.demo{background:var(--ink);color:var(--yellow);font:600 13px/1.4 var(--body);text-align:center;padding:8px 16px}
+.top{background:var(--yellow);border-bottom:3px solid var(--ink)}
+.top .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+.logo{font:400 34px/1 var(--display);text-transform:uppercase;text-decoration:none;letter-spacing:.01em}
+.open{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+.open::before{content:"";width:10px;height:10px;border-radius:50%;background:#1a9b3c;box-shadow:0 0 0 3px #1a9b3c33}
+.cartbtn{font:800 15px var(--body);background:var(--ink);color:var(--yellow);border:0;padding:12px 18px;border-radius:999px;cursor:pointer;text-decoration:none}
+.hero{background:var(--yellow);border-bottom:3px solid var(--ink);overflow:hidden}
+.hero .in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:end;padding-top:48px;padding-bottom:0}
+.hero h1{font:400 96px/.86 var(--display);font:400 clamp(64px,12vw,168px)/.86 var(--display);text-transform:uppercase;margin:0 0 28px;letter-spacing:-.01em}
+.hero h1 span{color:var(--tomato)}
+.hero p{font-size:20px;max-width:34ch;margin:0 0 24px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px}
+.b{display:inline-flex;align-items:center;gap:8px;font:800 16px var(--body);padding:15px 24px;border:3px solid var(--ink);border-radius:999px;text-decoration:none;background:var(--paper)}
+.b.red{background:var(--tomato);color:#fff;border-color:var(--ink)}
+.hero img{border:3px solid var(--ink);border-bottom:0;border-radius:24px 24px 0 0;aspect-ratio:4/5;object-fit:cover;width:100%}
+.strip{background:var(--ink);color:var(--yellow)}
+.strip .in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding-top:16px;padding-bottom:16px;font:800 16px/1.3 var(--body)}
+section{padding-top:80px;padding-bottom:80px}
+h2{font:400 clamp(44px,7vw,88px)/.9 var(--display);text-transform:uppercase;margin:0 0 12px}
+.sub{color:var(--grey);margin:0 0 36px;max-width:56ch}
+.shop{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px;align-items:start}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+.card{border:3px solid var(--ink);border-radius:18px;overflow:hidden;background:#fff;display:grid}
+.card .ph{aspect-ratio:4/3;background:var(--yellow) center/cover no-repeat}
+.card .bd{padding:16px;display:grid;gap:6px}
+.card h3{font:800 19px/1.2 var(--body);margin:0}
+.card p{margin:0;color:var(--grey);font-size:14px}
+.card .ft{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.card .pr{font:800 18px var(--body);font-variant-numeric:tabular-nums}
+.add{font:800 14px var(--body);background:var(--yellow);border:2px solid var(--ink);border-radius:999px;padding:8px 14px;cursor:pointer}
+.add:active{transform:scale(.96)}
+.cart{position:sticky;top:20px;border:3px solid var(--ink);border-radius:18px;background:#fff;padding:20px;display:grid;gap:14px}
+.cart h3{font:400 32px/1 var(--display);text-transform:uppercase;margin:0}
+.cart ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15px}
+.cart li{display:flex;justify-content:space-between;gap:8px;font-variant-numeric:tabular-nums}
+.cart .empty{color:var(--grey)}
+.cart .tot{display:flex;justify-content:space-between;font:800 20px var(--body);border-top:2px dashed var(--ink);padding-top:12px;font-variant-numeric:tabular-nums}
+.slot{display:grid;gap:6px;font-size:14px;font-weight:600}
+.slot select{font:600 16px var(--body);padding:10px;border:2px solid var(--ink);border-radius:10px;background:var(--paper)}
+.pay{font:800 16px var(--body);background:var(--tomato);color:#fff;border:3px solid var(--ink);border-radius:999px;padding:14px;cursor:pointer}
+.pay[disabled]{opacity:.45;cursor:not-allowed}
+.note{font-size:13px;color:var(--grey);margin:0}
+.msg{font-weight:600;color:#1a7a33;margin:0}
+.why{background:var(--ink);color:var(--paper)}
+.why .sub{color:#c9c3b2}
+.why .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.why .c{border:2px solid #ffffff33;border-radius:18px;padding:24px}
+.why .c b{display:block;font:400 54px/1 var(--display);color:var(--yellow)}
+.spot{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.spot img{border:3px solid var(--ink);border-radius:24px;aspect-ratio:3/2;object-fit:cover;width:100%}
+.spot dl{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;margin:24px 0 0;font-variant-numeric:tabular-nums}
+.spot dt{font-weight:800}
+.spot dd{margin:0;color:var(--grey)}
+footer{border-top:3px solid var(--ink);background:var(--yellow)}
+footer .in{padding-top:24px;padding-bottom:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-weight:600;font-size:14px}
+@media (max-width:900px){
+  .hero .in,.shop,.spot{grid-template-columns:1fr}
+  .hero img{max-width:420px}
+  .cart{position:static}
+  section{padding-top:56px;padding-bottom:56px}
+  .open{display:none}
+}
+</style>
+</head>
+<body>
+<div class="demo">Maquette B · restaurant fictif, photos d'illustration · <a href="../">Retour à la proposition</a></div>
+
+<header class="top"><div class="in">
+  <a class="logo" href="#">Pala Pala</a>
+  <span class="open">Ouvert · retrait en 10 min</span>
+  <a class="cartbtn" href="#commande">Panier · <span id="count">0</span></a>
+</div></header>
+
+<main>
+<div class="hero"><div class="in">
+  <div>
+    <h1>La pizza <span>à la part.</span></h1>
+    <p>Pizza romaine en plaque, coupée aux ciseaux, pesée, emportée. Commandez ici, payez en ligne, passez la prendre.</p>
+    <div class="ctas"><a class="b red" href="#commande">Commander en ligne</a><a class="b" href="#comptoir">Trouver le comptoir</a></div>
+  </div>
+  <img src="../img/b-parts.jpg" alt="Trois parts de pizza romaine sur papier kraft">
+</div></div>
+
+<div class="strip"><div class="in"><span>Pâte à 80 % d'hydratation</span><span>Cuite toutes les 20 minutes</span><span>Sans commission de plateforme</span></div></div>
+
+<section id="commande"><div class="in">
+  <h2>Commander</h2>
+  <p class="sub">Exemple de commande en ligne directe : le paiement arrive chez le restaurant, sans commission de plateforme. Les prix et les parts se modifient depuis WordPress.</p>
+  <div class="shop">
+    <div class="grid">
+      <article class="card"><div class="ph" style="background-image:url(../img/b-parts.jpg);background-position:80% 15%"></div><div class="bd"><h3>Diavola</h3><p>Tomate, mozzarella, salame piquant.</p><div class="ft"><span class="pr">4,50 €</span><button class="add" data-n="Diavola" data-p="4.5">Ajouter</button></div></div></article>
+      <article class="card"><div class="ph" style="background-image:url(../img/b-parts.jpg);background-position:10% 15%"></div><div class="bd"><h3>Patate</h3><p>Pommes de terre, romarin, fleur de sel.</p><div class="ft"><span class="pr">4,00 €</span><button class="add" data-n="Patate" data-p="4">Ajouter</button></div></div></article>
+      <article class="card"><div class="ph" style="background-image:url(../img/b-parts.jpg);background-position:50% 90%"></div><div class="bd"><h3>Fiori di zucca</h3><p>Fleurs de courgette, mozzarella, anchois.</p><div class="ft"><span class="pr">5,00 €</span><button class="add" data-n="Fiori di zucca" data-p="5">Ajouter</button></div></div></article>
+      <article class="card"><div class="ph" style="background-image:url(../img/b-amis.jpg);background-position:50% 60%"></div><div class="bd"><h3>Formule copains</h3><p>Une pizza entière, six parts, deux boissons.</p><div class="ft"><span class="pr">19,00 €</span><button class="add" data-n="Formule copains" data-p="19">Ajouter</button></div></div></article>
+    </div>
+    <aside class="cart" aria-live="polite">
+      <h3>Votre panier</h3>
+      <ul id="lines"><li class="empty">Ajoutez une part pour commencer.</li></ul>
+      <div class="tot"><span>Total</span><span id="total">0,00 €</span></div>
+      <label class="slot" for="slot">Retrait au comptoir
+        <select id="slot"><option>Dès que possible (10 min)</option><option>12 h 30</option><option>12 h 45</option><option>13 h 00</option><option>19 h 30</option></select>
+      </label>
+      <button class="pay" id="pay" disabled>Payer par carte</button>
+      <p class="msg" id="msg" hidden>Exemple : commande transmise, le restaurant la reçoit sur sa tablette.</p>
+      <p class="note">Maquette : aucun paiement n'est effectué.</p>
+    </aside>
+  </div>
+</div></section>
+
+<section class="why"><div class="in">
+  <h2>Pourquoi en direct&nbsp;?</h2>
+  <p class="sub">Sur une plateforme de livraison, la commission prend une grosse part de chaque commande. Ici, elle reste chez vous.</p>
+  <div class="cols">
+    <div class="c"><b>0 %</b>Pas de commission sur les commandes passées sur votre site.</div>
+    <div class="c"><b>10 min</b>Créneaux de retrait réglés par vous, selon l'affluence.</div>
+    <div class="c"><b>1 tablette</b>Les commandes arrivent sur un écran au comptoir, avec un bip.</div>
+  </div>
+</div></section>
+
+<section id="comptoir"><div class="in spot">
+  <img src="../img/b-boutique.jpg" alt="Comptoir de pizza à la part éclairé, vu de la rue le soir">
+  <div>
+    <h2>Le comptoir</h2>
+    <p class="sub">5 place de la République, Le Mans. Tram arrêt République, à 50 mètres.</p>
+    <dl><dt>Lun. au ven.</dt><dd>11 h 30 · 14 h 30 et 18 h 00 · 22 h 00</dd><dt>Samedi</dt><dd>11 h 30 · 23 h 00</dd><dt>Dimanche</dt><dd>Fermé</dd></dl>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="in"><span>Pala Pala · pizza à la part · maquette</span><span>Mentions légales · CGV · Cookies</span></div></footer>
+
+<script>
+const cart = {}, fmt = n => n.toFixed(2).replace('.', ',') + ' €';
+const render = () => {
+  const lines = document.getElementById('lines'), keys = Object.keys(cart);
+  let total = 0, count = 0;
+  lines.innerHTML = keys.length ? '' : '<li class="empty">Ajoutez une part pour commencer.</li>';
+  keys.forEach(k => { const {q, p} = cart[k]; total += q * p; count += q;
+    const li = document.createElement('li'); li.innerHTML = `<span>${q} × ${k}</span><span>${fmt(q * p)}</span>`; lines.append(li); });
+  document.getElementById('total').textContent = fmt(total);
+  document.getElementById('count').textContent = count;
+  document.getElementById('pay').disabled = !count;
+};
+document.querySelectorAll('.add').forEach(b => b.addEventListener('click', () => {
+  const n = b.dataset.n; cart[n] = cart[n] || {q: 0, p: +b.dataset.p}; cart[n].q++; render();
+  document.getElementById('msg').hidden = true;
+}));
+document.getElementById('pay').addEventListener('click', () => { document.getElementById('msg').hidden = false; });
+</script>
+</body>
+</html>

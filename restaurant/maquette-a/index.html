@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forno Brace · maquette</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Maquette A : napolitaine au feu de bois. Nuit charbon, braise orange, crème. Commande via plateformes + téléphone. */
+:root{--coal:#17110e;--coal-2:#231a15;--ember:#ec6a2c;--cream:#f4e9da;--ash:#b9a998;--line:#3a2d25;
+  --display:"Libre Caslon Display",Georgia,serif;--body:"Work Sans",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--coal);color:var(--cream);font:400 17px/1.6 var(--body)}
+a{color:inherit}
+img{max-width:100%;display:block}
+.in{max-width:1180px;margin:0 auto;padding-left:20px;padding-right:20px}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+.demo{background:var(--ember);color:var(--coal);font:500 13px/1.4 var(--body);text-align:center;padding:8px 16px}
+.demo a{font-weight:600}
+.top{border-bottom:1px solid var(--line)}
+.top .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.logo{font:400 30px/1 var(--display);letter-spacing:.01em;text-decoration:none}
+.logo i{color:var(--ember)}
+nav{display:flex;gap:28px;font-size:15px}
+nav a{text-decoration:none;color:var(--ash)}
+nav a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:2px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--cream);letter-spacing:.02em}
+.btn.hot{background:var(--ember);border-color:var(--ember);color:var(--coal)}
+.hero{position:relative;min-height:min(86vh,760px);display:grid;align-items:end}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgb(23 17 14 / .1) 30%,rgb(23 17 14 / .92) 100%)}
+.hero .in{position:relative;z-index:1;padding-block:0 64px;display:grid;gap:22px}
+.hero h1{font:400 96px/.86 var(--display);font:400 clamp(48px,9vw,112px)/.95 var(--display);margin:0;max-width:11ch;text-wrap:balance}
+.hero h1 i{color:var(--ember);font-style:normal}
+.hero p{max-width:46ch;color:var(--cream);font-size:clamp(17px,2vw,20px);margin:0}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.facts{border-block:1px solid var(--line);background:var(--coal-2)}
+.facts .in{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding-top:20px;padding-bottom:20px;font-size:15px}
+.facts b{display:block;color:var(--ember);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+section{padding-top:96px;padding-bottom:96px}
+h2{font:400 clamp(38px,5.5vw,64px)/1 var(--display);margin:0 0 16px;text-wrap:balance}
+.lead{color:var(--ash);max-width:56ch;margin:0}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.story ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.story li{display:grid;grid-template-columns:42px 1fr;gap:12px;align-items:baseline;border-top:1px solid var(--line);padding-top:14px}
+.story li span{font:400 22px var(--display);color:var(--ember)}
+.menu-wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.menu-wrap img{aspect-ratio:1;object-fit:cover;width:100%;position:sticky;top:24px}
+.cat{font:600 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin:40px 0 8px}
+.dish{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding-top:16px;padding-bottom:16px;border-bottom:1px dotted var(--line)}
+.dish b{font:400 24px/1.2 var(--display)}
+.dish .p{font-variant-numeric:tabular-nums;font-weight:500}
+.dish p{grid-column:1/-1;margin:0;color:var(--ash);font-size:15px}
+.tag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ember);color:var(--ember);padding:2px 6px;margin-left:8px;vertical-align:middle;font-family:var(--body)}
+.order{background:var(--cream);color:var(--coal)}
+.order .lead{color:#5a4a3f}
+.ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:#d9cbb8;margin-top:40px;border:2px solid #d9cbb8}
+.way{background:var(--cream);padding:28px;display:grid;gap:10px;text-decoration:none}
+.way h3{font:400 30px/1 var(--display);margin:0}
+.way p{margin:0;color:#5a4a3f;font-size:15px}
+.way span{font-weight:600;color:#b4471a}
+.way:hover{background:#efe1ce}
+.reviews{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:start}
+.score{font:400 120px/1 var(--display);color:var(--ember)}
+.score small{display:block;font:500 14px/1.4 var(--body);color:var(--ash)}
+.quotes{display:grid;gap:28px}
+blockquote{margin:0;font:400 clamp(22px,2.6vw,30px)/1.3 var(--display)}
+blockquote cite{display:block;margin-top:8px;font:400 14px var(--body);font-style:normal;color:var(--ash)}
+.infos{border-top:1px solid var(--line)}
+.infos .in{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.infos h3{font:600 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--ember);margin:0 0 12px}
+.infos p{margin:0;color:var(--ash)}
+.infos table{border-collapse:collapse;color:var(--ash);font-variant-numeric:tabular-nums}
+.infos td{padding:2px 16px 2px 0}
+footer{border-top:1px solid var(--line);color:var(--ash);font-size:14px}
+footer .in{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.call{display:none}
+@media (max-width:860px){
+  nav{display:none}
+  .story,.menu-wrap,.reviews{grid-template-columns:1fr;gap:32px}
+  .menu-wrap img{position:static;aspect-ratio:16/10}
+  section{padding-top:64px;padding-bottom:64px}
+  .top .btn{padding:10px 14px}
+  .call{display:flex;position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;justify-content:center;background:var(--ember);color:var(--coal);font-weight:600;padding:15px;border-radius:2px;text-decoration:none;box-shadow:0 10px 30px rgb(0 0 0 / .4)}
+  footer{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Maquette A · restaurant fictif, photos d'illustration · <a href="../">Retour à la proposition</a></div>
+
+<header class="top"><div class="in">
+  <a class="logo" href="#">Forno <i>Brace</i></a>
+  <nav aria-label="Navigation principale"><a href="#histoire">Le four</a><a href="#carte">La carte</a><a href="#commander">Commander</a><a href="#infos">Venir</a></nav>
+  <a class="btn hot" href="#commander">Commander</a>
+</div></header>
+
+<main>
+<div class="hero">
+  <img src="../img/a-four.jpg" alt="Pizza napolitaine sortant d'un four à bois">
+  <div class="in">
+    <h1>Cuite en <i>90 secondes</i>, à 450&nbsp;°C.</h1>
+    <p>Pizzeria napolitaine au feu de bois. Pâte maturée 48 heures, tomates San Marzano, fior di latte livrée deux fois par semaine.</p>
+    <div class="row"><a class="btn hot" href="#commander">Commander maintenant</a><a class="btn" href="#carte">Voir la carte</a></div>
+  </div>
+</div>
+
+<div class="facts"><div class="in">
+  <div><b>Ce soir</b>Ouvert de 18 h 30 à 22 h 30</div>
+  <div><b>Téléphone</b>02 43 00 00 00</div>
+  <div><b>Adresse</b>12 rue du Four, Le Mans</div>
+  <div><b>Avis Google</b>4,9 sur 5 · 312 avis</div>
+</div></div>
+
+<section id="histoire"><div class="in story">
+  <img src="../img/a-mains.jpg" alt="Mains qui étirent une pâte à pizza farinée">
+  <div>
+    <h2>Une pâte, trois jours de travail.</h2>
+    <p class="lead">On ne fait qu'une chose et on prend le temps de la faire. Chaque boule de pâte est pétrie à la main le lundi pour être cuite le mercredi.</p>
+    <ul>
+      <li><span>48 h</span>Maturation lente au froid, pour une pâte légère et digeste.</li>
+      <li><span>450°</span>Four à bois de chêne, cuisson en moins de deux minutes.</li>
+      <li><span>12</span>Pizzas à la carte, pas une de plus. Elles changent avec les saisons.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="carte" style="padding-top:0"><div class="in menu-wrap">
+  <img src="../img/a-margherita.jpg" alt="Pizza margherita vue de dessus">
+  <div>
+    <h2>La carte</h2>
+    <p class="lead">Modifiable par le restaurant en deux minutes depuis son téléphone.</p>
+    <p class="cat">Les rouges</p>
+    <div class="dish"><b>Margherita</b><span class="p">10 €</span><p>San Marzano, fior di latte, basilic, huile d'olive de Sicile.</p></div>
+    <div class="dish"><b>Diavola <span class="tag">piquante</span></b><span class="p">13 €</span><p>San Marzano, fior di latte, salame piccante, piment de Calabre.</p></div>
+    <div class="dish"><b>Capricciosa</b><span class="p">14 €</span><p>Jambon cuit, champignons, artichauts, olives taggiasche.</p></div>
+    <p class="cat">Les blanches</p>
+    <div class="dish"><b>Quattro formaggi</b><span class="p">14 €</span><p>Fior di latte, gorgonzola, provola fumée, parmesan 24 mois.</p></div>
+    <div class="dish"><b>Patate e rosmarino <span class="tag">du moment</span></b><span class="p">13 €</span><p>Crème de provola, pommes de terre fines, romarin, fleur de sel.</p></div>
+  </div>
+</div></section>
+
+<section class="order" id="commander"><div class="in">
+  <h2>Commander, en trois façons.</h2>
+  <p class="lead">Livraison par les plateformes, ou à emporter en appelant directement la pizzeria.</p>
+  <div class="ways">
+    <a class="way" href="#"><h3>Uber Eats</h3><p>Livraison dans tout le centre-ville.</p><span>Environ 25 min →</span></a>
+    <a class="way" href="#"><h3>Deliveroo</h3><p>Livraison jusqu'aux communes voisines.</p><span>Environ 30 min →</span></a>
+    <a class="way" href="#"><h3>À emporter</h3><p>Appelez le 02 43 00 00 00, c'est prêt à l'heure dite.</p><span>Prête en 15 min →</span></a>
+  </div>
+</div></section>
+
+<section><div class="in reviews">
+  <div class="score">4,9<small>312 avis Google · exemple</small></div>
+  <div class="quotes">
+    <blockquote>« La pâte la plus légère qu'on ait mangée hors de Naples. »<cite>Exemple d'avis affiché automatiquement depuis Google</cite></blockquote>
+    <blockquote>« Commandé à emporter, prête à l'heure pile, encore brûlante. »<cite>Exemple d'avis affiché automatiquement depuis Google</cite></blockquote>
+  </div>
+</div></section>
+</main>
+
+<section class="infos" id="infos"><div class="in">
+  <div><h3>Adresse</h3><p>12 rue du Four<br>72000 Le Mans<br><a href="#">Itinéraire</a></p></div>
+  <div><h3>Horaires</h3><table><tr><td>Mar. au jeu.</td><td>18 h 30 · 22 h 00</td></tr><tr><td>Ven. et sam.</td><td>18 h 30 · 23 h 00</td></tr><tr><td>Dim. et lun.</td><td>Fermé</td></tr></table></div>
+  <div><h3>Contact</h3><p>02 43 00 00 00<br>Instagram · Facebook</p></div>
+</div></section>
+
+<footer><div class="in"><span>Forno Brace · pizzeria napolitaine · maquette</span><span>Mentions légales · Cookies</span></div></footer>
+<a class="call" href="#">Appeler la pizzeria</a>
+</body>
+</html>
