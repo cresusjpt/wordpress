@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sites WordPress réalisés par Jean-Paul Tossou">
+<meta property="og:description" content="Quatre sites en ligne : immobilier, conciergerie, location meublée, boutique. Propres, rapides, modifiables par vous.">
+<meta property="og:url" content="https://www.jeanpaultossou.tech/wordpress/">
+<meta property="og:image" content="https://www.jeanpaultossou.tech/wordpress/shots/fafa.jpg">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Sites réalisés par Jean-Paul</title>
+<meta name="description" content="Sites WordPress conçus et mis en ligne par Jean-Paul Tossou : immobilier, conciergerie, location meublée, boutique en ligne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: planche de projets. Chaque site = fenêtre de navigateur avec sa vraie URL + téléphone en surimpression, fiche à côté. */
+:root{
+  --paper:#f2f3f0; --surface:#ffffff; --ink:#15171c; --muted:#5b6170; --line:#d9dcd6;
+  --accent:#2448d8; --accent-ink:#ffffff; --chrome:#e6e8e3;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#111318; --surface:#1a1d24; --ink:#eceee9; --muted:#9aa1ae; --line:#2b2f38;
+  --accent:#7d97ff; --accent-ink:#0d1020; --chrome:#242832; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#111318; --surface:#1a1d24; --ink:#eceee9; --muted:#9aa1ae; --line:#2b2f38;
+  --accent:#7d97ff; --accent-ink:#0d1020; --chrome:#242832; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0}
+p{margin:0}
+.label{font:500 12px/1.2 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* En-tête */
+header{padding-block:56px 40px;display:grid;gap:24px}
+.who{display:flex;align-items:center;gap:12px;font-weight:600}
+.who .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(40px,7vw,80px);max-width:14ch}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:60ch}
+.lede strong{color:var(--ink);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px)}
+
+/* Projets */
+.projects{display:grid;gap:96px;padding-block:48px 24px;border-top:1px solid var(--line)}
+.project{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:48px;align-items:center}
+.project:nth-child(even) .shots{order:2}
+.shots{position:relative;padding:0 40px 40px 0}
+.browser{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 30px 60px -30px rgb(0 0 0 / .35)}
+.bar{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--chrome);border-bottom:1px solid var(--line)}
+.bar i{width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
+.url{flex:1;min-width:0;font:400 12px/1 var(--mono);color:var(--muted);background:var(--surface);border-radius:6px;padding:8px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.browser img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.phone{position:absolute;right:0;bottom:0;width:26%;max-width:150px;border:6px solid #15171c;border-radius:22px;overflow:hidden;background:#15171c;box-shadow:0 20px 40px -16px rgb(0 0 0 / .5)}
+.phone img{display:block;width:100%;aspect-ratio:9/19;object-fit:cover;object-position:top}
+
+.info{display:grid;gap:18px;min-width:0}
+.info h2{font-size:clamp(28px,3.4vw,40px)}
+.where{color:var(--muted)}
+.info ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.info li{display:grid;grid-template-columns:18px 1fr;gap:8px}
+.info li::before{content:"";width:8px;height:8px;margin-top:9px;border-radius:2px;background:var(--accent)}
+.stack{font:400 12px/1.5 var(--mono);color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.visit{font-weight:600;color:var(--accent);text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.visit:hover{text-decoration:underline}
+
+/* Offre */
+section.block{padding-block:72px 0}
+section.block>h2{font-size:clamp(28px,4vw,44px);max-width:20ch;margin-bottom:32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.cell{background:var(--surface);padding:24px;display:grid;gap:8px;align-content:start}
+.cell h3{font-size:20px}
+.cell p{color:var(--muted)}
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;gap:6px;padding-top:16px;border-top:2px solid var(--ink)}
+.steps li::before{content:"Étape " counter(s);font:500 12px/1 var(--mono);color:var(--accent);letter-spacing:.06em}
+.steps strong{font-family:var(--display);font-size:20px}
+.steps span{color:var(--muted)}
+.fits{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.fits span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px;font-size:14px}
+
+/* Contact */
+.contact{margin-block:88px 64px;background:var(--ink);color:var(--paper);border-radius:16px;padding:clamp(28px,5vw,56px);display:grid;gap:20px}
+.contact h2{font-size:clamp(30px,4.5vw,52px);max-width:18ch}
+.contact p{color:color-mix(in srgb,var(--paper) 75%,transparent);max-width:56ch}
+.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.mail code{font:400 clamp(15px,2.2vw,20px)/1.3 var(--mono);user-select:all;word-break:break-all;background:color-mix(in srgb,var(--paper) 10%,transparent);padding:10px 14px;border-radius:8px}
+.mail button{font:600 15px var(--body);padding:11px 18px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+footer{padding-block:0 40px;color:var(--muted);font-size:14px}
+
+@media (max-width:820px){
+  .project{grid-template-columns:1fr;gap:28px}
+  .project:nth-child(even) .shots{order:0}
+  .shots{padding:0 24px 32px 0}
+  .phone{width:30%;border-width:4px;border-radius:16px}
+  header{padding-block:32px 28px}
+}
+@media (prefers-reduced-motion:no-preference){.btn,.browser{transition:transform .2s}.shots:hover .browser{transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="who"><span class="dot" aria-hidden="true"></span>Jean-Paul Tossou · développeur indépendant depuis 2020</div>
+    <h1>Des sites web <em>propres</em>, en ligne vite.</h1>
+    <p class="lede">Je conçois des sites <strong>WordPress</strong> sur mesure pour des commerces et des indépendants. Vous modifiez vous-même vos textes, vos photos et vos prix. Le site s'affiche vite sur téléphone et il est construit pour être trouvé sur Google. Voici quatre sites en ligne aujourd'hui, à visiter.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#contact">Parler de votre projet</a>
+      <a class="btn" href="#realisations">Voir les sites</a>
+    </div>
+  </header>
+
+  <main>
+  <div class="projects" id="realisations">
+
+    <article class="project">
+      <div class="shots">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">mounea.fr</span></div>
+          <img src="shots/mounea.jpg" alt="Page d'accueil du site Mounea sur ordinateur" width="1440" height="900"></div>
+        <div class="phone"><img src="shots/mounea-m.jpg" alt="Site Mounea sur téléphone"></div>
+      </div>
+      <div class="info">
+        <span class="label">Agence immobilière · Le Mans</span>
+        <h2>Mounea</h2>
+        <p class="where">Remplacement complet d'un ancien site par un thème dessiné pour l'agence.</p>
+        <ul>
+          <li>Catalogue de biens avec filtres, alimenté par l'agence elle-même</li>
+          <li>Demandes d'estimation et de visite reçues directement par e-mail</li>
+          <li>Pages pensées pour Google : vente, gestion locative, investissement</li>
+          <li>Bandeau cookies conforme RGPD, carte sans clé Google</li>
+        </ul>
+        <p class="stack">Thème sur mesure · extension métier · ACF · Rank Math · Complianz</p>
+        <a class="visit" href="https://mounea.fr/" target="_blank" rel="noopener">Visiter mounea.fr ↗</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="shots">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">fafaconciergerie.fr</span></div>
+          <img src="shots/fafa.jpg" alt="Page d'accueil de Fafa Conciergerie sur ordinateur" width="1440" height="900"></div>
+        <div class="phone"><img src="shots/fafa-m.jpg" alt="Site Fafa Conciergerie sur téléphone"></div>
+      </div>
+      <div class="info">
+        <span class="label">Locations meublées · Le Mans, Nancy, Limoges</span>
+        <h2>Fafa Conciergerie</h2>
+        <p class="where">Un site de réservation directe pour ne plus payer de commission aux plateformes.</p>
+        <ul>
+          <li>Réservation et paiement en ligne par carte</li>
+          <li>Calendriers synchronisés avec Airbnb et Booking : zéro double réservation</li>
+          <li>Avis Airbnb et Booking affichés automatiquement sur le site</li>
+          <li>Site bilingue français et anglais, guides d'arrivée pour les voyageurs</li>
+        </ul>
+        <p class="stack">WPRentals · Stripe · Beds24 · Polylang · extension de synchro sur mesure</p>
+        <a class="visit" href="https://www.fafaconciergerie.fr/" target="_blank" rel="noopener">Visiter fafaconciergerie.fr ↗</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="shots">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">lenideslys.com</span></div>
+          <img src="shots/nidlys.jpg" alt="Page d'accueil du Nid des Lys sur ordinateur" width="1440" height="900"></div>
+        <div class="phone"><img src="shots/nidlys-m.jpg" alt="Site du Nid des Lys sur téléphone"></div>
+      </div>
+      <div class="info">
+        <span class="label">Appartements meublés · Lomé, Togo</span>
+        <h2>Le Nid des Lys</h2>
+        <p class="where">Trois appartements à réserver en direct, avec une identité visuelle propre à chaque adresse.</p>
+        <ul>
+          <li>Paiement par carte bancaire ou Mobile Money</li>
+          <li>Services en plus : navette aéroport, excursions, agenda local</li>
+          <li>Contact rapide par WhatsApp</li>
+          <li>Français et anglais</li>
+        </ul>
+        <p class="stack">WPRentals · paiement Mobile Money · Polylang · même socle que Fafa</p>
+        <a class="visit" href="https://lenideslys.com/" target="_blank" rel="noopener">Visiter lenideslys.com ↗</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="shots">
+        <div class="browser"><div class="bar"><i></i><i></i><i></i><span class="url">lockeyyou.fr</span></div>
+          <img src="shots/lockeyyou.jpg" alt="Page d'accueil de Lockey You sur ordinateur" width="1440" height="900"></div>
+        <div class="phone"><img src="shots/lockeyyou-m.jpg" alt="Site Lockey You sur téléphone"></div>
+      </div>
+      <div class="info">
+        <span class="label">Produit tech · boutique en ligne</span>
+        <h2>Lockey You</h2>
+        <p class="where">Le site de Lockey You, solution d'arrivée autonome pour les locations courte durée. Nous le construisons en équipe, j'en porte l'architecture.</p>
+        <ul>
+          <li>Boutique en ligne avec panier et paiement sécurisé</li>
+          <li>Parcours séparés pour les conciergeries et les propriétaires</li>
+          <li>Demande de démo, blog, mode sombre</li>
+        </ul>
+        <p class="stack">Thème sur mesure · WooCommerce · Stripe · Complianz</p>
+        <a class="visit" href="https://lockeyyou.fr/" target="_blank" rel="noopener">Visiter lockeyyou.fr ↗</a>
+      </div>
+    </article>
+  </div>
+
+  <section class="block">
+    <h2>Ce que vous obtenez</h2>
+    <div class="grid">
+      <div class="cell"><h3>Vous restez autonome</h3><p>Textes, photos, menu, prix, horaires : tout se modifie depuis l'administration WordPress, sans moi.</p></div>
+      <div class="cell"><h3>Rapide sur téléphone</h3><p>La majorité de vos visiteurs arrivent sur mobile. Chaque page est pensée d'abord pour eux.</p></div>
+      <div class="cell"><h3>Trouvé sur Google</h3><p>Structure, titres et données pour les moteurs de recherche en place dès la mise en ligne.</p></div>
+      <div class="cell"><h3>Clé en main</h3><p>Nom de domaine, hébergement, adresse e-mail, certificat HTTPS et bandeau cookies : je m'en occupe.</p></div>
+    </div>
+    <div class="fits" aria-label="Exemples de sites possibles">
+      <span>Restaurant : menu, galerie, commande, horaires</span>
+      <span>Cabinet d'avocat : expertises, prise de rendez-vous</span>
+      <span>Artisan, commerce, location</span>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Comment ça se passe</h2>
+    <ol class="steps">
+      <li><strong>On échange</strong><span>Un appel pour comprendre votre activité et vos exemples préférés.</span></li>
+      <li><strong>Maquette</strong><span>Vous validez le rendu de la page d'accueil avant que je construise le reste.</span></li>
+      <li><strong>Mise en ligne</strong><span>Le site complet, sur votre nom de domaine, testé sur ordinateur et téléphone.</span></li>
+      <li><strong>Prise en main</strong><span>Je vous montre comment modifier votre contenu. Je reste joignable ensuite.</span></li>
+    </ol>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Un site à faire&nbsp;? Parlons-en.</h2>
+    <p>Envoyez-moi deux lignes sur votre activité et, si vous en avez, un site que vous aimez. Je réponds avec une proposition claire. Vous pouvez aussi passer par la personne qui vous a transmis ce lien.</p>
+    <div class="mail">
+      <code id="mail">jeanpaul.tossou@saltech.fr</code>
+      <button type="button" id="copy">Copier l'adresse</button>
+    </div>
+  </section>
+  </main>
+
+  <footer>Jean-Paul Tossou · Saltech · sites vérifiés en ligne en novembre 2026</footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', e => {
+  const b = e.currentTarget, t = document.getElementById('mail').textContent;
+  const done = () => { b.textContent = 'Adresse copiée'; setTimeout(() => b.textContent = "Copier l'adresse", 2000); };
+  const pick = () => { const r = document.createRange(); r.selectNodeContents(document.getElementById('mail')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Sélectionnée, faites Copier'; };
+  try { navigator.clipboard.writeText(t).then(done, pick); } catch { pick(); }
+});
+</script>
+</body>
+</html>
